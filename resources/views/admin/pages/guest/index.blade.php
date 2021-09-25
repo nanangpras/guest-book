@@ -29,7 +29,7 @@
                         <div class="card r-0 shadow">
                             <div class="table-responsive">
                                 <form>
-                                    <table class="table table-striped table-hover r-0">
+                                    <table id="example" class="table table-striped table-hover r-0">
                                         <thead>
                                             <tr class="no-b">
                                                 <th>Nama</th>
@@ -40,28 +40,29 @@
 
                                         <tbody>
                                             @foreach ($guest as $item)
-                                            <tr>
-                                                <td>
-                                                    <div class="avatar avatar-md mr-3 mt-1 float-left">
-                                                        <span class="avatar-letter avatar-letter-a  avatar-md circle">
-                                                            <img src="{{asset('storage/image/'.$item->image)}}" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <div>
-                                                            <strong>{{$item->name}}</strong>
+                                                <tr>
+                                                    <td>
+                                                        <div class="avatar avatar-md mr-3 mt-1 float-left">
+                                                            <span class="avatar-letter avatar-letter-a  avatar-md circle">
+                                                                <img src="{{ asset('storage/image/' . $item->image) }}"
+                                                                    alt="">
+                                                            </span>
                                                         </div>
-                                                        <small>{{$item->address}}</small>
-                                                    </div>
-                                                </td>
-                                                <td>{{$item->saying}}</td>
-                                                <td>
-                                                    <a href="#"><i class="icon-eye mr-3"></i></a>
-                                                    <a href="#"><i class="icon-pencil"></i></a>
-                                                </td>
-                                            </tr>
+                                                        <div>
+                                                            <div>
+                                                                <strong>{{ $item->name }}</strong>
+                                                            </div>
+                                                            <small>{{ $item->address }}</small>
+                                                        </div>
+                                                    </td>
+                                                    <td>{{ $item->saying }}</td>
+                                                    <td>
+                                                        <a href="#"><i class="icon-eye mr-3"></i></a>
+                                                        <a href="#"><i class="icon-pencil"></i></a>
+                                                    </td>
+                                                </tr>
                                             @endforeach
-                                            
+
 
                                         </tbody>
                                     </table>
@@ -74,8 +75,18 @@
         </div>
     </div>
     <!--Add New Message Fab Button-->
-    <a href="{{route('guest.create')}}" class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
-            class="icon-add"></i></a>
+    {{-- <a href="{{ route('guest.create') }}" class="btn-fab btn-fab-md fab-left fab-left-bottom-fixed shadow btn-primary"><i
+            class="icon-add"></i></a> --}}
 
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                responsive: true
+            });
 
+            new $.fn.dataTable.FixedHeader(table);
+        });
+    </script>
+@endpush

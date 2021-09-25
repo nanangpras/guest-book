@@ -105,15 +105,3 @@
 </html>
 @include('admin.includes.script');
 @stack('scripts')
-<script>
-    $('document').ready(function(e) {
-        $('#logout').on('click', function(e) {
-            document.cookie = "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            document.cookie = "refresh_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-            if (!getCookie('access_token')) {
-                window.location.href = '/login'
-            }
-        })
-    })
-</script>

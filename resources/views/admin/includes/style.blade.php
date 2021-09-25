@@ -1,4 +1,7 @@
  <link rel="stylesheet" href="{{ url ('template/assets/css/app.css')}}">
+ <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.9/css/fixedHeader.bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js">
+ 
 {{-- <link rel="stylesheet" href="{{ url ('template/assets/css/app2.css')}}"> --}}
     <style>
         .loader {
