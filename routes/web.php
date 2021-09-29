@@ -32,6 +32,15 @@ Route::get('/', [HomepageController::class, 'index'])->name('home.wedding');
 Route::get('/alert', [HomepageController::class, 'alert'])->name('alert');
 Route::post('/guest/insert', [HomepageController::class, 'createImageFromBase64'])->name('guest.insert');
 
+Route::get('/guest/input-name', [HomepageController::class, 'createStepOne'])->name('guest.step.one');
+Route::post('/guest/input-name', [HomepageController::class, 'postStepOne'])->name('guest.step.one.post');
+
+Route::get('/guest/input-note', [HomepageController::class, 'createStepTwo'])->name('guest.step.two');
+Route::post('/guest/input-note', [HomepageController::class, 'postStepTwo'])->name('guest.step.two.post');
+
+Route::get('/guest/input-photo', [HomepageController::class, 'createStepThree'])->name('guest.step.three');
+Route::post('/guest/input-photo', [HomepageController::class, 'postStepThree'])->name('guest.step.three.post');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

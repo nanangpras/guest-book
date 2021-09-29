@@ -12,8 +12,12 @@
                             <h1>Joefrey &amp; Sheila</h1>
                             <h2>We Are Getting Married</h2>
                             <div class="simply-countdown simply-countdown-one"></div>
-                            <p><a href="#fh5co-services" class="nav-link js-scroll-trigger btn btn-default btn-sm">Buku
-                                    Tamu</a></p>
+                            <p>
+                                {{-- <a href="#fh5co-services" class="nav-link js-scroll-trigger btn btn-default btn-sm">Buku
+                                    Tamu</a> --}}
+                                <a href="{{route('guest.step.one')}}" class="btn btn-default btn-sm">Buku
+                                    Tamu</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -21,7 +25,7 @@
         </div>
     </header>
 
-    <div id="fh5co-services" class="fh5co-section-gray">
+    <?php /*<div id="fh5co-services" class="fh5co-section-gray">
         <div class="container">
 
             <div class="row animate-box">
@@ -34,7 +38,6 @@
             <form id="bukutamu" method="POST" enctype="multipart/form-data">
                 {{-- @csrf --}}
 				{{-- {{ csrf_field() }} --}}
-                {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
@@ -95,9 +98,10 @@
 
         </div>
     </div>
+    */ ?>
 
 @endsection
-@push('after-scripts')
+{{-- @push('after-scripts')
     <script src="{{ asset('config/webcam.min.js') }}"></script>
     
     <script>
@@ -142,22 +146,43 @@
                     },
 
                     success: function(response) {
-                        if (response.success) {
-                            alert('berhasil upload');
-                            // $('[name="name"]').val('');
-                            // $('[name="address"]').val('');
-                            // $('[name="saying"]').val('');
-                            console.log(data.success);
-                            window.location.href = routeRedirect;
-                        } else {
-                            alert('gagal upload');
-                            console.log(response.error);
-                        }
+                        // $('#bukutamu')[0].reset();
+                        location.reload();
                     },
+
+                    // success: function(response) {
+                    //     if (response.error) {
+                    //         alert('berhasil upload');
+                    //         // $('[name="name"]').val('');
+                    //         // $('[name="address"]').val('');
+                    //         // $('[name="saying"]').val('');
+                    //         console.log(data.error);
+                    //         window.location.href = routeRedirect;
+                    //     } else {
+                    //         alert('gagal upload');
+                    //         console.log(response.success);
+                    //     }
+                    // },
                     error: function(response) {
                         console.log(response.error);
-                    }
-                })
+                        alert('gagal upload ya');
+                    }   
+                });
+                // .done(function(data){
+                //     if (data>0) {
+                //         alert('insert data sukses');
+				// 	    $('#bukutamu')[0].reset();
+                //     }
+                // })
+                // .fail(function(data){
+                //     alert('gagal');
+                //     console.log(data.error);
+                // })
+                // .always(function(){
+                //     alert('ulangi kalau belum bisa');
+                //     console.log("complete");
+                //     location.reload();
+                // });
 
             });
         });
@@ -165,4 +190,4 @@
         
     </script>
 
-@endpush
+@endpush --}}
