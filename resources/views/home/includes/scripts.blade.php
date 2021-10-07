@@ -22,13 +22,34 @@
     <script src="{{ asset('themes/js/main.js') }}"></script>
 
     <script>
-        var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+        //tujuan hari
+        var countDate = new Date ("2021-10-23 09:00:00").getTime();
+
+        //update setiap 1 detik
+        var x = setInterval(function(){
+
+            //ambil hari dan waktu sekarang
+            var now = new Date().getTime();
+            //perbedaan antara tujuan hari dan hari sekarang
+            var distance = countDate - now;
+
+            var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours   = Math.floor((distance % (1000 * 60 * 60 * 24))/ (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60))/ (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60))/ (1000));
+
+        });
+        var d = new Date(new Date().getTime() + 1 * 120 * 120 * 1000);
 
         // default example
         simplyCountdown('.simply-countdown-one', {
             year: d.getFullYear(),
             month: d.getMonth() + 1,
-            day: d.getDate()
+            // day: days,
+            // hours : hours,
+            // minutes:minutes,
+            // seconds:seconds
+
         });
 
         //jQuery example

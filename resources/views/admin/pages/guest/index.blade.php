@@ -57,7 +57,7 @@
                                                     </td>
                                                     <td>{{ $item->saying }}</td>
                                                     <td>
-                                                        <a href="#"><i class="icon-eye mr-3"></i></a>
+                                                        <a href="{{route('guest.show',$item->id)}}"><i class="icon-eye mr-3"></i></a>
                                                         <a href="#"><i class="icon-pencil"></i></a>
                                                     </td>
                                                 </tr>

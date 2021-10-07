@@ -48,7 +48,8 @@ class GuestController extends Controller
      */
     public function show($id)
     {
-        //
+        $guest = Guest::findOrFail($id);
+        return view('admin.pages.guest.show', compact('guest'));
     }
 
     /**
