@@ -14,7 +14,36 @@
                 @csrf
                 {{-- {{ csrf_field() }} --}}
                 {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
-                <div class="row">
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <div class="feature-center animate-box">
+                            <span class="icon">
+                                <i class="icon-user"></i>
+                            </span>
+                            <div class="feature-copy">
+                                <h3>Selfi</h3>
+                                <div class="fh5co-video fh5co-bg" id="my_camera"
+                                    style="background-image: url(images/img_bg_3.jpg); ">
+                                    
+                                </div>
+                                <input type="hidden" id="image" name="image" value="">
+                                <div class="form-group">
+                                    <div id="my_result"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-top: 20px;">
+                            <a href="javascript:void(take_snapshot())" class="btn btn-primary">Ambil foto</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                            <a href="{{ route('guest.step.two') }}" id="simpan" class="btn btn-secondary">Back</a>
+                            <button id="simpan" type="submit" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <div class="feature-center animate-box" data-animate-effect="fadeInLeft">
                             <div class="feature-copy">
@@ -30,12 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                            <a href="{{ route('guest.step.two') }}" id="simpan" class="btn btn-secondary">Back</a>
-                            <button id="simpan" type="submit" class="btn btn-primary">Next</button>
-                        </div>
-                    </div>
+                </div> --}}
             </form>
 
         </div>
