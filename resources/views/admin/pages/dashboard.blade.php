@@ -14,7 +14,8 @@
                     @foreach ($guest as $item)
                     <div class="p-5">
                         <span class="s-48 font-weight-lighter text-primary round">
-                            <img src="{{ asset('template/assets/img/dummy/u1.png') }}" alt="user">
+                            {{-- <img src="{{ asset('template/assets/img/dummy/u1.png') }}" alt="user"> --}}
+                            <img src="{{ asset('image/'.$item->image) }}" alt="user">
                         </span>
                         <br>
                         <div class="text-center">

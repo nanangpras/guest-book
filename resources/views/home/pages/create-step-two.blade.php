@@ -14,19 +14,21 @@
                 @csrf
                 {{-- {{ csrf_field() }} --}}
                 {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
-                <div class="row">
+                <div class="row form-group">
                     <div class="col-md-12">
-                        <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+                        <div class="feature-left animate-box">
                             <span class="icon">
-                                <i class="icon-user"></i>
+                                <i class="icon-address"></i>
                             </span>
                             <div class="feature-copy">
                                 <h3>Ucapan untuk Pengantin</h3>
                                 <textarea name="saying" id="saying" cols="2" rows="2" class="form-control" required>{{{ $guest->saying ?? '' }}}</textarea>
-                                <p>Ucapan doa dan harapan ke pengantin ya</p>
+                                <p>Berikan ucapan dan doa restu ke pengantin</p>
                             </div>
                         </div>
+                    </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <a href="{{route('guest.step.one')}}" id="simpan" class="btn btn-secondary">Back</a>
