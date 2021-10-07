@@ -129,11 +129,13 @@ class HomepageController extends Controller
 
             $tamu = $request->session()->get('guest');
             $tamu->image = $file_name;
+            // $tamu->fill($validatedData);
             $tamu->save();
             // dd($tamu);
             $request->session()->forget('guest');
         } catch (Exception $e) {
-            return $e;
+            alert('eror input');
+            // return $e;
         }
 
         return redirect()->route('alert');
