@@ -27,10 +27,11 @@
                                     
                                 </div>
                                 <input type="hidden" id="image" name="image" value="">
-                                <div class="form-group">
-                                    <div id="my_result"></div>
-                                </div>
+                                
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="feature-copy" id="my_result"></div>
                         </div>
                         <div style="padding-top: 20px;">
                             <a href="javascript:void(take_snapshot())" class="btn btn-primary">Ambil foto</a>
