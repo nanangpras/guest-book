@@ -24,7 +24,7 @@
                                 <h3>Selfi</h3>
                                 <div class="fh5co-video fh5co-bg" id="my_camera"
                                     style="background-image: url(images/img_bg_3.jpg); ">
-                                    
+
                                 </div>
                                 <input type="hidden" id="image" name="image" value="">
                                 <div class="form-group">
@@ -67,9 +67,9 @@
 @endsection
 @push('after-scripts')
     <script src="{{ asset('config/webcam.min.js') }}"></script>
-    
+
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
 
             Webcam.set({
                 width: 550,
@@ -79,21 +79,24 @@
                 image_format: 'png',
                 jpeg_quality: 90,
                 force_flash: false,
-                flip_horiz: true
+                flip_horiz: true,
+                constraints: {
+                    facingMode: cameraFacingMode
+                }
             });
 
             Webcam.attach('#my_camera');
 
         });
-            
+
         function take_snapshot() {
-        Webcam.snap( function(data_uri, canvas, context) {
-            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
-            var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
-            document.getElementById('image').value = raw_image_data;
-            console.log(raw_image_data);
-        } );
-    }
+            Webcam.snap(function(data_uri, canvas, context) {
+                document.getElementById('my_result').innerHTML = '<img src="' + data_uri + '"/>';
+                var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+                document.getElementById('image').value = raw_image_data;
+                console.log(raw_image_data);
+            });
+        }
     </script>
 
 @endpush
